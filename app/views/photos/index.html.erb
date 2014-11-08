@@ -1,28 +1,17 @@
 <h1>List of Photos</h1>
 
-<table>
-  <tr>
-    <th>Thumbnail</th>
-    <th>Caption</th>
-    <th colspan="3">Actions</th>
-  </tr>
 <% @list_of_photos.each do |photo| %>
-  <tr>
-    <td>
-      <img src="<%= photo.source %>" width="80">
-    </td>
-    <td>
-      <%= photo.caption %>
-    </td>
-    <td>
-      <a href="http://localhost:3000/photo_details/<%= photo.id %>">Show</a>
-    </td>
-    <td>
-      <a href="http://localhost:3000/edit_photo_form/<%= photo.id %>">Edit</a>
-    </td>
-    <td>
-      <a href="http://localhost:3000/delete_photo/<%= photo.id %>">Delete</a>
-    </td>
-  </tr>
+  <div class="row" style = "margin-bottom: 30px">
+    <div class="col-md-8">
+        <img class="img-responsive" src="<%= photo.source %>" width="80">
+      <div class="caption">
+        <%= photo.caption %>
+      </div>
+        <a class="btn btn-success" href="http://localhost:3000/photo_details/<%= photo.id %>">Show</a>
+
+        <a class="btn btn-warning" href="http://localhost:3000/edit_photo_form/<%= photo.id %>">Edit</a>
+
+        <a class="btn btn-danger" href="http://localhost:3000/delete_photo/<%= photo.id %>">Delete</a>
+    </div>
+  </div>
 <% end %>
-</table>

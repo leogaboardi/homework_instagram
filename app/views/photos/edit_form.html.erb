@@ -1,15 +1,35 @@
-<h1>Edit photo</h1>
 
-<form action="/update_photo/<%= @id %>">
-  <div>
-    <label for="photo_caption">Caption:</label>
-    <input id="photo_caption" type="text" name="the_caption" value="<%= @caption %>">
+<div class="row">
+  <div class="col-md-4">
   </div>
-  <div>
-    <label for="photo_image_url">Image URL:</label>
-    <input id="photo_image_url" type="text" name="the_source" value="<%= @source %>">
+  <div class="col-md-4" style="border: 1px solid #E7E7E7; padding: 10px; background-color: #F8F8F8; border-radius: 5px">
+  <h3 class="text-center">Edit photo</h3>
+  <br>
+
+    <form class="form-horizontal" action="/update_photo/<%= @id %>">
+    <div class="form-group">
+      <label for="photo_caption" class="col-sm-4 control-label">Caption</label>
+      <div class="col-md-8">
+      <input class="form-control" id="photo_caption" type="text" name="the_caption" value="<%= @caption %>">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="photo_image_url" class="col-sm-4 control-label">Image URL</label>
+      <div class="col-md-8">
+        <input class="form-control" id="photo_image_url" type="text" name="the_source" value="<%= @source %>">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <input class="btn btn-default" type="submit" value="Edit photo">
+      </div>
+      <div class="col-md-4">
+    </div>
+    </div>
+  </form>
   </div>
-  <div>
-    <input type="submit" value="Edit photo">
+  <div class="col-md-4">
   </div>
-</form>
+</div>

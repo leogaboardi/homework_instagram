@@ -1,17 +1,22 @@
-<h1>List of Photos</h1>
-
+<hr>
 <% @list_of_photos.each do |photo| %>
   <div class="row" style = "margin-bottom: 30px">
-    <div class="col-md-8">
-        <img class="img-responsive" src="<%= photo.source %>" width="80">
-      <div class="caption">
-        <%= photo.caption %>
-      </div>
-        <a class="btn btn-success" href="http://localhost:3000/photo_details/<%= photo.id %>">Show</a>
-
-        <a class="btn btn-warning" href="http://localhost:3000/edit_photo_form/<%= photo.id %>">Edit</a>
-
-        <a class="btn btn-danger" href="http://localhost:3000/delete_photo/<%= photo.id %>">Delete</a>
+    <div class="col-md-4">
     </div>
+    <div class="col-md-4" style="border: 1px solid #E7E7E7; padding: 10px; background-color: #F8F8F8; border-radius: 5px">
+        <img class="img-responsive" src="<%= photo.source %>" style="margin-left:auto;margin-right:auto">
+      <div class="caption">
+        <h4><%= photo.caption %></h4>
+      </div>
+
+        <a class="btn btn-success" href="photo_details/<%= photo.id %>"><span class="glyphicon glyphicon-zoom-in"></span></a>
+
+        <a class="btn btn-warning" href="edit_photo_form/<%= photo.id %>"><span class="glyphicon glyphicon-pencil"></span></a>
+
+        <a class="btn btn-danger" href="delete_photo/<%= photo.id %>"><span class="glyphicon glyphicon-trash"></span></a>
+    </div>
+    <div class="col-md-4">
+    </div>
+
   </div>
 <% end %>
